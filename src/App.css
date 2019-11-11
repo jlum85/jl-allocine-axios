@@ -102,6 +102,7 @@ footer {
 
 footer span {
   padding: 0 10px;
+  font-size: 30px;
 }
 
 @media only screen and (min-width: 375px) and (max-width: 812px) {
@@ -127,5 +128,10 @@ footer span {
 
   .loading {
     font-size: 20px;
+  }
+
+  footer span {
+    font-size: 20px;
+    line-height: 32px;
   }
 }
