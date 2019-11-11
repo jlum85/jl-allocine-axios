@@ -51,6 +51,7 @@
   height: 300px;
   width: 500px;
   margin: 1.25rem;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.438);
 }
 
 .card img {
@@ -104,6 +105,10 @@ footer span {
   padding: 0 10px;
   line-height: 32px;
   font-size: 20px;
+}
+
+footer svg {
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.438);
 }
 
 @media only screen and (min-width: 375px) and (max-width: 812px) {
