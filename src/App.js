@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Container from "./components/Container";
 import Footer from "./components/Footer";
+import CatMovie from "./components/CatMovie";
 import "./App.css";
 import axios from "axios";
 
@@ -29,7 +30,6 @@ function App() {
   };
 
   const onChangePage = step => {
-    console.log(" onChangePage , current : " + numPage + " , step : " + step);
     const newNum = numPage + step;
     if (newNum >= 0 && newNum <= countPage) {
       setNumPage(newNum);
@@ -64,56 +64,30 @@ function App() {
     setCattMovies(idx);
   };
 
-  const getMoviesBar = () => {
-    // const tabCat = ["Popular Movies", "Upcoming Movies", "Top Rated Movies"];
-    // const elements = tabCat.map((item, index) => {
-    //   return <span onClick={() => onClickBar({ index })}>{tabCat[index]}</span>;
-    // });
-    return (
-      <div className="headerBar">
-        {/* {elements} */}
-        <span
-          className={catMovies === 0 ? "activeMenu" : ""}
-          onClick={() => onClickBar(0)}
-        >
-          Popular Movies
-        </span>
-        <span
-          className={catMovies === 1 ? "activeMenu" : ""}
-          onClick={() => onClickBar(1)}
-        >
-          Upcoming Movies
-        </span>
-        <span
-          className={catMovies === 2 ? "activeMenu" : ""}
-          onClick={() => onClickBar(2)}
-        >
-          Top Rated Movies
-        </span>
-      </div>
-    );
-  };
-
   return (
     <div className="App">
-      <div className="header">
-        <Header />
-      </div>
-      {getMoviesBar()}
+      <Header />
+      <CatMovie cat={catMovies} onClickBar={onClickBar} />
 
       <div className="container">
         {isLoading ? (
-          <p>Chargement en cours...</p>
+          <p className="loading">Chargement en cours...</p>
         ) : (
-          <Container movies={movies}></Container>
+          <Container movies={movies} />
         )}
       </div>
 
-      <Footer
-        numPage={numPage}
-        countPage={countPage}
-        onChangePage={onChangePage}
-      ></Footer>
+      <>
+        {isLoading ? (
+          <></>
+        ) : (
+          <Footer
+            numPage={numPage}
+            countPage={countPage}
+            onChangePage={onChangePage}
+          />
+        )}
+      </>
     </div>
   );
 }

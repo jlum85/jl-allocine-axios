@@ -19,8 +19,8 @@ const Card = props => {
         height="300"
       ></img>
       <div className="detail">
-        <h2>{props.movie.title}</h2>
-        <h3>{props.movie.release_date}</h3>
+        <div className="titleMovie">{props.movie.title}</div>
+        <div className="dateMovie">{props.movie.release_date}</div>
         <p className="descMovie">{props.movie.overview}</p>
       </div>
     </div>

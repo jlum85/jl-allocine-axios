@@ -20,7 +20,7 @@ const Footer = props => {
         </svg>
       </span>
       <span>
-        {props.numPage} / {props.countPage}
+        Page {props.numPage} / {props.countPage}
       </span>
       <svg
         onClick={() => props.onChangePage(1)}

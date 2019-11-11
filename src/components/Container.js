@@ -8,7 +8,7 @@ const Container = props => {
     return <Card key={index} movie={tab[index]}></Card>;
   });
 
-  return <div className="container">{elements}</div>;
+  return <>{elements}</>;
 };
 
 export default Container;
