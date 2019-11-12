@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Container from "./components/Container";
 import Footer from "./components/Footer";
 import CatMovie from "./components/CatMovie";
+import Pagination from "./components/Pagination";
 import "./App.css";
 import axios from "axios";
 
@@ -51,6 +52,7 @@ function App() {
   // quand on change de catégorie
   useEffect(() => {
     setIsLoading(true);
+    setNumPage(1);
     fetchData();
   }, [catMovies]);
 
@@ -88,6 +90,7 @@ function App() {
           />
         )}
       </>
+      <Pagination />
     </div>
   );
 }
