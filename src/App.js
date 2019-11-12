@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Container from "./components/Container";
 import Footer from "./components/Footer";
 import CatMovie from "./components/CatMovie";
-import Pagination from "./components/Pagination";
+// import Pagination from "./components/Pagination";
 import "./App.css";
 import axios from "axios";
 
@@ -90,7 +90,7 @@ function App() {
           />
         )}
       </>
-      <Pagination />
+      {/* <Pagination /> */}
     </div>
   );
 }
